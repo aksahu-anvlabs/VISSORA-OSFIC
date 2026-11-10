@@ -1,0 +1,18 @@
+CXX = cl
+
+OPENCV_DIR = C:/opencv/build
+MSVC_DIR = C:/MSVC/VC/Tools/MSVC/14.51.36231
+
+CXXFLAGS = /EHsc /std:c++17 /MD /DCURL_STATICLIB /I"headers" /I"curl/install/include"
+
+LDFLAGS = /LIBPATH:"libs" /LIBPATH:"curl/install/lib" opencv_world500.lib ncnn.lib bytetrack.lib libcurl.lib ws2_32.lib crypt32.lib wldap32.lib normaliz.lib secur32.lib bcrypt.lib iphlpapi.lib advapi32.lib
+
+build:
+	$(CXX) $(CXXFLAGS) main.cpp helper.cpp /Fe:app.exe /link $(LDFLAGS)
+
+buildDLL:
+	@if not exist libs mkdir libs
+	$(CXX) $(CXXFLAGS) /D BUILDING_BYTETRACK_DLL /LD static/*.cpp /Fe:bytetrack.dll /link /IMPLIB:libs/bytetrack.lib
+
+run:
+	app.exe

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>V-ORSTC</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" integrity="sha512-Zcn6bjR/8RZbLEpLIeOwNtzREBAJnUKESxces60Mpoj+2okopSAcSUIUOseddDm0cxnGQzxIR7vJgsLZbdLE3w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+	<script src="script.js"></script>
+</head>
+<body onload="onStart()">
+	<div class="window">
+		<div class="screen">
+			<div class="check_points">
+				<div class="flex">
+					<p class="medium_text"><span id="bus_name">..</span></p>&nbsp;&nbsp;&nbsp;
+					<button class="light_button" id="src_btn">A</button>&nbsp;
+					<img src="icons/to.png" class="small_icon">&nbsp;
+					<button class="light_button" id="dst_btn">B</button>
+				</div>
+				<div class="line"></div>
+			</div>
+			<div id="map"></div>
+		</div>
+		<div class="info">
+			<div class="sett">
+				<div class="flex sett_top">
+					<div class="inp flex">
+						<p class="medium_text" style="font-weight: 700;">Pickup / Destination</p>
+						<div class="flex inp_row">
+							<div class="inp_box flex">
+								<img class="small_icon" src="icons/location.png">
+								<select id="src">
+									<option value="Khordha">Khordha</option>
+									<option value="Bhubaneswar">Bhubaneswar</option>
+									<option value="Cuttuck">Cuttuck</option>
+									<option value="Puri">Puri</option>
+								</select>
+							</div>
+							<img class="small_icon ref_img" src="icons/swap.png">
+							<div class="inp_box flex">
+								<img class="small_icon" src="icons/location.png">
+								<select id="dst">
+									<option value="Bhubaneswar">Bhubaneswar</option>
+									<option value="Khordha">Khordha</option>
+									<option value="Cuttuck">Cuttuck</option>
+									<option value="Puri">Puri</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="inp flex">
+						<p class="medium_text" style="font-weight: 700;">Time</p>
+						<div class="flex inp_row">
+							<div class="inp_box flex">
+								<img class="small_icon" src="icons/date.png">
+								<input type="week">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="flex sett_bottom">
+					<p class="medium_text">Select Bus: </p>
+					<div class="inp_box flex bus_select_box">
+						<input value="" class="tm" style="margin: 0;" placeholder="Please Enter bus name" id="busName">
+						<select id="buses"></select>
+					</div>
+				</div>
+			</div>
+			<div class="usage">
+				<div>
+					<div><strong>Bus<br>Stop</strong></div><div></div><div></div><div></div><div></div><div></div><div></div>
+				</div>
+				<div>
+					<div>Mon</div><div></div><div></div><div></div><div></div><div></div><div></div>
+				</div>
+				<div>
+					<div>Tue</div><div></div><div></div><div></div><div></div><div></div><div></div>
+				</div>
+				<div>
+					<div>Wed</div><div></div><div></div><div></div><div></div><div></div><div></div>
+				</div>
+				<div>
+					<div>Thu</div><div></div><div></div><div></div><div></div><div></div><div></div>
+				</div>
+				<div>
+					<div>Fri</div><div></div><div></div><div></div><div></div><div></div><div></div>
+				</div>
+				<div>
+					<div>Sat</div><div></div><div></div><div></div><div></div><div></div><div></div>
+				</div>
+				<div>
+					<div>Sun</div><div></div><div></div><div></div><div></div><div></div><div></div>
+				</div>
+				<div>
+					<div><strong>Net<br>Total</strong></div><div></div><div></div><div></div><div></div><div></div><div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
