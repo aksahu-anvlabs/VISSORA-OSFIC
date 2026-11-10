@@ -5,6 +5,8 @@ Vissora is an Edge AI-powered person tracking and monitoring system designed for
 
 Developed for **OSFIC (Odisha State Faculty Innovation Challenge)**, Vissora aims to improve passenger monitoring and transportation analytics through edge computing and AI-based vision systems.
 
+![Vissora Screenshot](assets/screenshot.jpeg)
+
 ## Features
 
 - **AI-Based Person Detection:** Detects people in video streams using an AI detection model.
